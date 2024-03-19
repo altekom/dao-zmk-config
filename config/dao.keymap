@@ -32,7 +32,7 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LS(LALT) &kp LSHIFT>,
+                <&kp LALT &kp LSHIFT>,
                 <&macro_tap>,
                 <&kp KP_NUMBER_1>,
                 <&macro_release>,
@@ -46,13 +46,69 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LS(LALT) &kp LSHIFT>,
+                <&kp LEFT_ALT &kp LSHIFT>,
                 <&macro_tap>,
                 <&kp KP_NUMBER_2>,
                 <&macro_release>,
                 <&kp LALT &kp LSHIFT>;
 
             label = "RUS";
+        };
+
+        ctrlLeft: ctrlLeft {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp LEFT>,
+                <&macro_release>,
+                <&kp LCTRL>;
+
+            label = "CTRLLEFT";
+        };
+
+        ctrlRight: ctrlRight {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp RIGHT>,
+                <&macro_release>,
+                <&kp LCTRL>;
+
+            label = "CTRLRIGHT";
+        };
+
+        ctrlShiftLeft: ctrlShiftLeft {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LC(LEFT_SHIFT)>,
+                <&macro_tap>,
+                <&kp LEFT>,
+                <&macro_release>,
+                <&kp LC(LEFT_SHIFT)>;
+
+            label = "CTRLSHIFTLEFT";
+        };
+
+        ctrlShiftRight: ctrlShiftRight {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LC(LEFT_SHIFT)>,
+                <&macro_tap>,
+                <&kp RIGHT>,
+                <&macro_release>,
+                <&kp LC(LEFT_SHIFT)>;
+
+            label = "CTRLSHIFTRIGHT";
         };
     };
 
@@ -70,28 +126,28 @@
 
         lower_layer {
             bindings = <
-&mt LGUI F1     &kp SLASH      &kp ASTERISK     &kp MINUS       &kp PLUS   &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp N7  &kp N8       &kp N9  &kp BACKSLASH  &kp DOUBLE_QUOTES
-&mt LCTRL PIPE  &kp QUESTION   &kp EXCLAMATION  &RUS            &ENG       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp N4  &kp N5       &kp N6  &kp SEMICOLON  &mt RCTRL COLON
-&mt LALT CARET  &kp AMPERSAND  &kp AT           &kp UNDERSCORE  &kp EQUAL  &kp LESS_THAN         &kp GREATER_THAN       &kp N1  &kp N2       &kp N3  &kp N0         &kp SINGLE_QUOTE
-                                                &lt ADJ TAB     &trans     &trans                &trans                 &trans  &lt ADJ DEL
+&mt LALT PERCENT  &kp SLASH      &kp ASTERISK     &kp MINUS       &kp PLUS   &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp N7  &kp N8       &kp N9  &kp BACKSLASH  &kp DOUBLE_QUOTES
+&mt LCTRL PIPE    &kp QUESTION   &kp EXCLAMATION  &RUS            &ENG       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp N4  &kp N5       &kp N6  &kp SEMICOLON  &mt RCTRL COLON
+&kp CARET         &kp AMPERSAND  &kp AT           &kp UNDERSCORE  &kp EQUAL  &kp LESS_THAN         &kp GREATER_THAN       &kp N1  &kp N2       &kp N3  &kp N0         &kp SINGLE_QUOTE
+                                                  &lt ADJ TAB     &trans     &trans                &trans                 &trans  &lt ADJ DEL
             >;
         };
 
         raise_layer {
             bindings = <
-&mt LGUI KP_NUM  &kp KP_SLASH     &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS  &kp C_VOL_UP  &kp HOME  &kp UP           &kp PG_UP  &kp SLCK         &kp CLCK
-&mt LCTRL EQUAL  &kp KP_MULTIPLY  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_PLUS   &kp C_MUTE    &kp LEFT  &kp DOWN         &kp RIGHT  &kp INS          &mt RCTRL K_APP
-&kp LALT         &kp KP_N0        &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DOT    &kp C_VOL_DN  &kp END   &kp PRINTSCREEN  &kp PG_DN  &kp PAUSE_BREAK  &kp RALT
-                                             &trans     &trans     &lt ADJ RET   &lt ADJ ESC   &trans    &trans
+&kp LALT    &kp HASH    &kp F7  &kp F8  &kp F9  &kp F12      &kp C_VOL_UP  &ctrlShiftLeft  &kp UP           &ctrlShiftRight  &kp PG_UP  &kp INS
+&kp LCTRL   &kp DOLLAR  &kp F4  &kp F5  &kp F6  &kp F11      &kp HOME      &kp LEFT        &kp DOWN         &kp RIGHT        &kp END    &mt RCTRL K_APP
+&kp LSHIFT  &none       &kp F1  &kp F2  &kp F3  &kp F10      &kp C_VOL_DN  &ctrlLeft       &kp PRINTSCREEN  &ctrlRight       &kp PG_DN  &kp RSHIFT
+                                &trans  &trans  &lt ADJ RET  &lt ADJ ESC   &trans          &trans
             >;
         };
 
         adjust_layer {
             bindings = <
-&bootloader  &none         &none         &none         &none         &none         &none         &none         &none         &none         &none         &bootloader
-&bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bt BT_CLR
-&sys_reset   &none         &none         &none         &none         &none         &none         &none         &none         &none         &none         &sys_reset
-                                         &trans        &none         &trans        &trans        &none         &trans
+&bootloader  &none  &none  &mkp MCLK  &mkp RCLK     &mkp LCLK     &kp KP_NUMLOCK  &kp CAPSLOCK  &kp SCROLLLOCK  &none  &none  &bootloader
+&bt BT_CLR   &none  &none  &none      &bt BT_SEL 2  &bt BT_SEL 0  &bt BT_SEL 0    &bt BT_SEL 2  &none           &none  &none  &bt BT_CLR
+&sys_reset   &none  &none  &none      &bt BT_SEL 3  &bt BT_SEL 1  &bt BT_SEL 1    &bt BT_SEL 3  &none           &none  &none  &sys_reset
+                           &trans     &none         &trans        &trans          &none         &trans
             >;
         };
     };
