@@ -4,10 +4,10 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include <dt-bindings/zmk/mouse.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/mouse.h>
 
 #define DEF 0
 #define LWR 1
@@ -127,28 +127,28 @@
 
         lower_layer {
             bindings = <
-&mt LALT PERCENT  &kp SLASH      &kp ASTERISK     &kp MINUS       &kp PLUS   &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp N7  &kp N8       &kp N9  &kp BACKSLASH  &kp DOUBLE_QUOTES
-&mt LCTRL PIPE    &kp QUESTION   &kp EXCLAMATION  &RUS            &ENG       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp N4  &kp N5       &kp N6  &kp SEMICOLON  &mt RCTRL COLON
-&kp CARET         &kp AMPERSAND  &kp AT           &kp UNDERSCORE  &kp EQUAL  &kp LESS_THAN         &kp GREATER_THAN       &kp N1  &kp N2       &kp N3  &kp N0         &kp SINGLE_QUOTE
-                                                  &lt ADJ TAB     &trans     &trans                &trans                 &trans  &lt ADJ DEL
+&mt LALT RA(RIGHT_BRACKET)  &kp RA(Q)  &kp ASTERISK  &kp MINUS       &kp PLUS   &kp RA(T)             &kp RA(LS(Y))          &kp N7  &kp N8       &kp N9  &kp RA(BACKSLASH)  &kp RA(LEFT_BRACKET)
+&mt LCTRL RA(GRAVE)         &kp RA(A)  &kp RA(S)     &RUS            &ENG       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp N4  &kp N5       &kp N6  &kp RA(SEMICOLON)  &mt RCTRL RA(SQT)
+&kp RA(RS(L))               &kp RA(Z)  &kp RA(X)     &kp UNDERSCORE  &kp EQUAL  &kp RA(B)             &kp RA(Y)              &kp N1  &kp N2       &kp N3  &kp N0             &kp RA(RS(LEFT_BRACKET))
+                                                     &lt ADJ TAB     &trans     &trans                &trans                 &trans  &lt ADJ DEL
             >;
         };
 
         raise_layer {
             bindings = <
-&kp LALT    &kp HASH    &kp F7  &kp F8  &kp F9  &kp F12      &kp C_VOL_UP  &ctrlShiftLeft  &kp UP           &ctrlShiftRight  &kp PG_UP  &kp INS
-&kp LCTRL   &kp DOLLAR  &kp F4  &kp F5  &kp F6  &kp F11      &kp HOME      &kp LEFT        &kp DOWN         &kp RIGHT        &kp END    &mt RCTRL K_APP
-&kp LSHIFT  &none       &kp F1  &kp F2  &kp F3  &kp F10      &kp C_VOL_DN  &ctrlLeft       &kp PRINTSCREEN  &ctrlRight       &kp PG_DN  &kp RSHIFT
-                                &trans  &trans  &lt ADJ RET  &lt ADJ ESC   &trans          &trans
+&kp LALT    &kp RA(Q)       &kp F7  &kp F8  &kp F9  &kp F12      &kp C_VOL_UP  &ctrlShiftLeft  &kp UP           &ctrlShiftRight  &kp PG_UP  &kp INS
+&kp LCTRL   &kp RA(DOLLAR)  &kp F4  &kp F5  &kp F6  &kp F11      &kp HOME      &kp LEFT        &kp DOWN         &kp RIGHT        &kp END    &mt RCTRL K_APP
+&kp LSHIFT  &kp RA(Z)       &kp F1  &kp F2  &kp F3  &kp F10      &kp C_VOL_DN  &ctrlLeft       &kp PRINTSCREEN  &ctrlRight       &kp PG_DN  &kp RSHIFT
+                                    &trans  &trans  &lt ADJ RET  &lt ADJ ESC   &trans          &trans
             >;
         };
 
         adjust_layer {
             bindings = <
-&bootloader  &none  &none  &mkp MCLK  &mkp RCLK     &mkp LCLK     &kp KP_NUMLOCK  &kp CAPSLOCK  &kp SCROLLLOCK  &none  &none  &bootloader
-&bt BT_CLR   &none  &none  &none      &bt BT_SEL 2  &bt BT_SEL 0  &bt BT_SEL 0    &bt BT_SEL 2  &bt BT_SEL 4    &none  &none  &bt BT_CLR
-&sys_reset   &none  &none  &none      &bt BT_SEL 3  &bt BT_SEL 1  &bt BT_SEL 1    &bt BT_SEL 3  &none           &none  &none  &sys_reset
-                           &trans     &none         &trans        &trans          &none         &trans
+&bootloader  &none  &none  &none         &none         &none         &kp KP_NUMLOCK  &kp CAPSLOCK  &kp SCROLLLOCK  &none  &none  &bootloader
+&bt BT_CLR   &none  &none  &bt BT_SEL 4  &bt BT_SEL 2  &bt BT_SEL 0  &bt BT_SEL 0    &bt BT_SEL 2  &bt BT_SEL 4    &none  &none  &bt BT_CLR
+&sys_reset   &none  &none  &none         &bt BT_SEL 3  &bt BT_SEL 1  &bt BT_SEL 1    &bt BT_SEL 3  &none           &none  &none  &sys_reset
+                           &trans        &none         &trans        &trans          &none         &trans
             >;
         };
     };
