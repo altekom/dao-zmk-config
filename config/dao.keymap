@@ -29,34 +29,6 @@
 
 / {
     macros {
-        ENG: ENG {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT &kp LSHIFT>,
-                <&macro_tap>,
-                <&kp KP_NUMBER_1>,
-                <&macro_release>,
-                <&kp LALT &kp LSHIFT>;
-
-            label = "ENG";
-        };
-
-        RUS: RUS {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_ALT &kp LSHIFT>,
-                <&macro_tap>,
-                <&kp KP_NUMBER_2>,
-                <&macro_release>,
-                <&kp LALT &kp LSHIFT>;
-
-            label = "RUS";
-        };
-
         ctrlLeft: ctrlLeft {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -119,16 +91,16 @@
 
         default_layer {
             bindings = <
-&mt LEFT_ALT RBKT  &kp Q  &kp W  &kp E        &kp R            &kp T        &kp Y        &kp U           &kp I        &kp O    &kp P              &mt RALT LBKT
-&mt LCTRL GRAVE    &kp A  &kp S  &kp D        &kp F            &kp G        &kp H        &kp J           &kp K        &kp L    &kp SEMI           &mt RCTRL SQT
-&kp LWIN           &kp Z  &kp X  &kp C        &kp V            &kp B        &kp N        &kp M           &kp COMMA    &kp DOT  &kp RA(RS(COMMA))  &kp RA(RS(DOT))
+&mt LEFT_ALT RBKT  &kp Q  &kp W  &kp E        &kp R            &kp T        &kp Y        &kp U           &kp I        &kp O    &kp P            &mt RALT LBKT
+&mt LCTRL GRAVE    &kp A  &kp S  &kp D        &kp F            &kp G        &kp H        &kp J           &kp K        &kp L    &kp SEMI         &mt RCTRL SQT
+&kp LWIN           &kp Z  &kp X  &kp C        &kp V            &kp B        &kp N        &kp M           &kp COMMA    &kp DOT  &kp RA(RS(DOT))  &kp RA(RS(COMMA))
                                  &lt RSE TAB  &mt LSHFT SPACE  &lt LWR RET  &lt LWR ESC  &mt RSHFT BSPC  &lt RSE DEL
             >;
         };
 
         lower_layer {
             bindings = <
-&mt LALT RA(RIGHT_BRACKET)  &kp RA(Q)  &kp ASTERISK  &kp MINUS       &kp PLUS        &kp RA(T)             &kp RA(Y)              &kp N7  &kp N8       &kp N9  &kp RA(BACKSLASH)  &kp RA(LEFT_BRACKET)
+&mt LALT RA(RIGHT_BRACKET)  &kp RA(Q)  &kp ASTERISK  &kp MINUS       &kp PLUS        &kp RA(T)             &kp RA(Y)              &kp N7  &kp N8       &kp N9  &kp RA(P)          &kp RA(LEFT_BRACKET)
 &mt LCTRL RA(GRAVE)         &kp RA(A)  &kp RA(S)     &kp LA(LS(N2))  &kt LA(LS(N1))  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp N4  &kp N5       &kp N6  &kp RA(SEMICOLON)  &mt RCTRL RA(SQT)
 &kp RA(RS(L))               &kp RA(Z)  &kp RA(X)     &kp UNDERSCORE  &kp EQUAL       &kp RA(B)             &kp RA(N)              &kp N1  &kp N2       &kp N3  &kp N0             &kp RA(RS(LEFT_BRACKET))
                                                      &lt ADJ TAB     &trans          &trans                &trans                 &trans  &lt ADJ DEL
