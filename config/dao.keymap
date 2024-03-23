@@ -127,9 +127,9 @@
 
         lower_layer {
             bindings = <
-&mt LALT RA(RIGHT_BRACKET)  &kp RA(Q)  &kp ASTERISK  &kp MINUS       &kp PLUS   &kp RA(T)             &kp RA(LS(Y))          &kp N7  &kp N8       &kp N9  &kp RA(BACKSLASH)  &kp RA(LEFT_BRACKET)
+&mt LALT RA(RIGHT_BRACKET)  &kp RA(Q)  &kp ASTERISK  &kp MINUS       &kp PLUS   &kp RA(T)             &kp RA(Y)              &kp N7  &kp N8       &kp N9  &kp RA(BACKSLASH)  &kp RA(LEFT_BRACKET)
 &mt LCTRL RA(GRAVE)         &kp RA(A)  &kp RA(S)     &RUS            &ENG       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp N4  &kp N5       &kp N6  &kp RA(SEMICOLON)  &mt RCTRL RA(SQT)
-&kp RA(RS(L))               &kp RA(Z)  &kp RA(X)     &kp UNDERSCORE  &kp EQUAL  &kp RA(B)             &kp RA(Y)              &kp N1  &kp N2       &kp N3  &kp N0             &kp RA(RS(LEFT_BRACKET))
+&kp RA(RS(L))               &kp RA(Z)  &kp RA(X)     &kp UNDERSCORE  &kp EQUAL  &kp RA(B)             &kp RA(N)              &kp N1  &kp N2       &kp N3  &kp N0             &kp RA(RS(LEFT_BRACKET))
                                                      &lt ADJ TAB     &trans     &trans                &trans                 &trans  &lt ADJ DEL
             >;
         };
