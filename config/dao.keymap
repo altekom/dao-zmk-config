@@ -8,6 +8,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/keys.h>
 
 #define DEF 0
 #define LWR 1
@@ -127,10 +128,10 @@
 
         lower_layer {
             bindings = <
-&mt LALT RA(RIGHT_BRACKET)  &kp RA(Q)  &kp ASTERISK  &kp MINUS       &kp PLUS   &kp RA(T)             &kp RA(Y)              &kp N7  &kp N8       &kp N9  &kp RA(BACKSLASH)  &kp RA(LEFT_BRACKET)
-&mt LCTRL RA(GRAVE)         &kp RA(A)  &kp RA(S)     &RUS            &ENG       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp N4  &kp N5       &kp N6  &kp RA(SEMICOLON)  &mt RCTRL RA(SQT)
-&kp RA(RS(L))               &kp RA(Z)  &kp RA(X)     &kp UNDERSCORE  &kp EQUAL  &kp RA(B)             &kp RA(N)              &kp N1  &kp N2       &kp N3  &kp N0             &kp RA(RS(LEFT_BRACKET))
-                                                     &lt ADJ TAB     &trans     &trans                &trans                 &trans  &lt ADJ DEL
+&mt LALT RA(RIGHT_BRACKET)  &kp RA(Q)  &kp ASTERISK  &kp MINUS       &kp PLUS        &kp RA(T)             &kp RA(Y)              &kp N7  &kp N8       &kp N9  &kp RA(BACKSLASH)  &kp RA(LEFT_BRACKET)
+&mt LCTRL RA(GRAVE)         &kp RA(A)  &kp RA(S)     &kp LA(LS(N2))  &kt LA(LS(N1))  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp N4  &kp N5       &kp N6  &kp RA(SEMICOLON)  &mt RCTRL RA(SQT)
+&kp RA(RS(L))               &kp RA(Z)  &kp RA(X)     &kp UNDERSCORE  &kp EQUAL       &kp RA(B)             &kp RA(N)              &kp N1  &kp N2       &kp N3  &kp N0             &kp RA(RS(LEFT_BRACKET))
+                                                     &lt ADJ TAB     &trans          &trans                &trans                 &trans  &lt ADJ DEL
             >;
         };
 
